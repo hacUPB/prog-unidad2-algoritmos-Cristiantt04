@@ -1,4 +1,9 @@
+
+
+
+
 # Ejercicio 1.1 
+
 
 1. ¿Cuántos bytes se necesitan para almacenar la palabra “Hola” en ASCII?
 2. ¿Cuántos bits hay en 5 KB?
