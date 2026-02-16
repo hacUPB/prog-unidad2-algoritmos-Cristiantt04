@@ -127,3 +127,29 @@ Debido a esto, el sistema debe truncar o redondear la representación, lo que ge
 
  128 + 64 + 16 + 4 + 2 = $214_{10}$ = $D6_{16}$
 
+ # Ejercicios Finales de Repaso
+
+
+1. Explica, en tus propias palabras, por qué es necesario que las computadoras representen los datos en binario.
+2. Convierte el número binario 10011011 a decimal y a hexadecimal.
+3. Investiga y describe cómo se representa una imagen en formato PNG en el disco.
+4. Analiza la siguiente situación: ¿Qué sucede si intentas almacenar un número mayor al que puede representar un byte (por ejemplo, 300)? ¿Cómo lo maneja Python?
+
+#### Soluciones
+1. Porque el hardware de los aparatos electronicos funciona mediante dos estados baasico, alto voltaje y bajo voltaje, los transistores los cuales son las bases de los circuitos electronicos solo pueden estar apagados o encendidos, por lo cual representar los datos en un sistema de dos posibilidades de entrada y salida es lo mas ideal. 
+
+2. 
+  |1|0|0|1|1|0|1|1| 
+ |---|---|---|---|---|---|---|---|
+ |$2^7$|$2^6$|$2^5$|$2^4$|$2^3$|$2^2$|$2^1$|$2^0$|
+ |128|64|32|16|8|4|2|1|
+
+ 128 + 16 + 8 + 2 + 1 = $115_{10}$ 
+
+
+$115_{10}$ = $9B_{16}$
+![](Images/Imagen%205.jpeg)
+
+3. Una imagen PNG no se guarda como “una foto” sino como un archivo binario estructurado. Empieza con una firma que identifica el formato y después se organiza en bloques llamados chunks. Hay un bloque principal que define el ancho, alto y tipo de color, otros que contienen los datos reales de los píxeles comprimidos (usando un método sin pérdida llamado DEFLATE) y uno final que marca el cierre del archivo. Los píxeles normalmente se almacenan como combinaciones de RGB o RGBA, y antes de guardarse se aplican filtros para mejorar la compresión. Todo está diseñado para que la imagen ocupe menos espacio sin perder calidad.
+
+4. Un byte solo puede representar 256 valores distintos, es decir, números del 0 al 255 si es sin signo. Si intentas guardar 300 en un solo byte en un lenguaje como C o Java, ocurre un desbordamiento: el número “se envuelve” y solo se conservan los 8 bits menos significativos, lo que cambia el valor almacenado. En cambio, Python no tiene este problema porque sus enteros no tienen un tamaño fijo de 8 o 32 bits. Python usa enteros de tamaño dinámico, así que puede representar 300 (o números muchísimo más grandes) sin overflow, limitado únicamente por la memoria disponible.
