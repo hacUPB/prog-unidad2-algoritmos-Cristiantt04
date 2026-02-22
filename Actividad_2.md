@@ -228,7 +228,7 @@ Mostrar Precio_Alumno, Costo_Total
 Fin
 
 ### Diagrama de flujo. 
-![](Diagramas/Diagram5.png)
+![](Diagramas/Diagrama5.png)
 
 # Actividad de evalución: Comprensión de conceptos. 
 
